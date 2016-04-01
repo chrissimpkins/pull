@@ -17,6 +17,8 @@ Simply copy the URL string or repository user/project string from any applicatio
 - Click the installer
 - Drag and drop the Pull application in your Applications directory
 
+Please note that [Git must be installed on your system](https://git-scm.com/downloads) to perform git clones of git repositories.  It is not embedded in the application.
+
 #### Start Pull at Login
 
 Open System Settings > Users and Groups and click on the Login items tab.  Click the `+` button at the bottom of the list and select the Pull application from your list of installed applications.
