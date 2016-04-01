@@ -30,7 +30,7 @@ You can manually launch the application by locating the Pull application with La
 
 #### Pull Things
 
-Copy any of the supported strings to the OS X clipboard and click the Pull status menu icon.  Done.  Look in your Downloads directory.
+Copy any of the supported strings to the OS X clipboard and click the Pull status menu icon.  Done.  Look in your Downloads directory.  Be patient if it is a large file or repository.  It's not magic.
 
 
 ### License
