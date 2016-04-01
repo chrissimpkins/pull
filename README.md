@@ -30,7 +30,7 @@ Open System Settings > Users and Groups and click on the Login items tab.  Click
 
 #### Launch Pull
 
-You can manually launch the application by locating the Pull application with Launchpad.  Click the Pull icon to launch the status menu application.  Use the instructions above to start Pull at login in order to avoid this step.
+You can manually launch the application by locating the Pull application with Launchpad.  Click the Pull icon to load the status menu icon in your status bar.  Use the instructions above to start Pull at login in order to avoid this step.
 
 #### Pull Things
 
