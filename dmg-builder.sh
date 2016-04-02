@@ -10,5 +10,5 @@
 --icon Pull.app 200 190 \
 --hide-extension Pull.app \
 --app-drop-link 600 185 \
-installer/Pull-Installer.dmg \
+Pull-Installer.dmg \
 /Users/ces/Desktop/code/pull/build
