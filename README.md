@@ -15,7 +15,7 @@ Simply copy the URL string or repository user/project string from any applicatio
 
 ### Install
 
-- [Download the dmg installer](https://github.com/chrissimpkins/pull/releases/download/v0.9.2/Pull-Installer.dmg)
+- [Download the dmg installer](https://github.com/chrissimpkins/pull/releases/download/v0.10.0/Pull-Installer.dmg)
 - Click the installer
 - Drag and drop the Pull application in your Applications directory
 
