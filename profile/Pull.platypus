@@ -29,7 +29,7 @@
 	<key>ExecutablePath</key>
 	<string>/usr/local/share/platypus/ScriptExec</string>
 	<key>IconPath</key>
-	<string>/Users/ces/Library/Application Support/Platypus/PlatypusIcon-35919.icns</string>
+	<string>/Users/ces/Library/Application Support/Platypus/PlatypusIcon-56231.icns</string>
 	<key>Identifier</key>
 	<string>com.csimpkins.Pull</string>
 	<key>Interpreter</key>
@@ -7191,7 +7191,7 @@
 	<key>StatusItemIconIsTemplate</key>
 	<true/>
 	<key>StatusItemTitle</key>
-	<string>PS</string>
+	<string>Title</string>
 	<key>StatusItemUseSystemFont</key>
 	<true/>
 	<key>Suffixes</key>
@@ -7214,6 +7214,6 @@
 	<key>UseXMLPlistFormat</key>
 	<false/>
 	<key>Version</key>
-	<string>0.9.0</string>
+	<string>0.10.0</string>
 </dict>
 </plist>
