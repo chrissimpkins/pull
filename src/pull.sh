@@ -21,48 +21,77 @@ if [[ $? -ne 0 ]]; then
 fi
 
 
-# GitHub HTTPS git clone
+# BEGIN GitHub HTTPS git clone
 echo "$PULL_STRING" | grep $GITHUB_HTTPS_RE >/dev/null
 
-if [[ $? -eq 0 ]]; then
-	QUIT_FLAG=1
-	echo "Cloning $PULL_STRING"
-	git clone "$PULL_STRING" >/dev/null 2>/dev/null &
+if [[ $? -eq 0 ]]; then    # matched regular expression successfully
+	if [[ $# -ne 1 ]]; then   # no argument to script is present = was not click request
+		QUIT_FLAG=1
+		if [[ ${#PULL_STRING} -gt 50 ]]; then  # take 50 char substring of the URL if > 50 chars
+			echo "git clone ${PULL_STRING:0:50}..."
+		else
+			echo "git clone $PULL_STRING"
+		fi
+	else
+		QUIT_FLAG=1
+		git clone "$PULL_STRING" >/dev/null 2>/dev/null &
+	fi
+
 fi
 
 if [[ $QUIT_FLAG -eq 1 ]]; then
 	exit 0
 fi
+# END GitHub HTTPS git clone
 
 
-# GitHub repository name clone
+# BEGIN GitHub repository name clone
 echo "$PULL_STRING" | grep $GITHUB_REPO_RE >/dev/null
 
-if [[ $? -eq 0 ]]; then
-	QUIT_FLAG=1
-	echo "Cloning GitHub repository $PULL_STRING"
-	git clone "https://github.com/$PULL_STRING.git" >/dev/null 2>/dev/null &
+if [[ $? -eq 0 ]]; then  # matched regular expression successfully
+	if [[ $# -ne 1 ]]; then   # no argument to script is present = was not click request
+		QUIT_FLAG=1
+		if [[ ${#PULL_STRING} -gt 50 ]]; then  # take 50 char substring of the URL if > 50 chars
+			echo "git clone ${PULL_STRING:0:50}..."
+		else
+			echo "git clone $PULL_STRING"
+		fi
+	else
+		QUIT_FLAG=1
+		git clone "https://github.com/$PULL_STRING.git" >/dev/null 2>/dev/null &
+	fi
 fi
 
 if [[ $QUIT_FLAG -eq 1 ]]; then
 	exit 0
 fi
+# END GitHub repository name clone
 
-
-# HTTP/HTTPS GET requests
+# BEGIN HTTP/HTTPS GET requests
 echo "$PULL_STRING" | grep $HTTP_GET_RE >/dev/null
 
-if [[ $? -eq 0 ]]; then
-	QUIT_FLAG=1
-	echo "Pulling $PULL_STRING"
-	curl -L --silent --no-buffer --max-time 600 --retry 3 --show-error --connect-timeout 5 -O "$PULL_STRING" >/dev/null 2>/dev/null &
+if [[ $? -eq 0 ]]; then  # matched regular expression successfully
+	if [[ $# -ne 1 ]]; then   # no argument to script is present = was not click request
+		QUIT_FLAG=1
+		if [[ ${#PULL_STRING} -gt 50 ]]; then  # take 50 char substring of the URL if > 50 chars
+			echo "Download ${PULL_STRING:0:50}..."
+		else
+			echo "Download $PULL_STRING"
+		fi
+	else
+		QUIT_FLAG=1
+		curl -L --silent --no-buffer --max-time 600 --retry 3 --show-error --connect-timeout 5 -O "$PULL_STRING" >/dev/null 2>/dev/null &
+	fi
 fi
 
 if [[ $QUIT_FLAG -eq 1 ]]; then
 	exit 0
 fi
+# END HTTP/HTTPS GET requests
 
-echo "[ERROR] clipboard data does not appear to be a supported string"
+
+# Default message for string match failure
+echo "Clipboard does not include a supported pull string"
 
 
 
