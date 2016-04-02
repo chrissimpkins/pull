@@ -7161,7 +7161,7 @@
 	<key>StatusItemIconIsTemplate</key>
 	<true/>
 	<key>StatusItemTitle</key>
-	<string>PS</string>
+	<string>Title</string>
 	<key>StatusItemUseSystemFont</key>
 	<true/>
 	<key>Suffixes</key>
