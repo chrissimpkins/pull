@@ -1,5 +1,9 @@
 ## Changelog
 
+### v0.9.2
+
+- now supports redirect follows for GET file requests
+
 ### v0.9.1
 
 - added download directory confirmation before file write takes place
