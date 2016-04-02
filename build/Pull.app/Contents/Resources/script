@@ -55,7 +55,7 @@ echo "$PULL_STRING" | grep $HTTP_GET_RE >/dev/null
 if [[ $? -eq 0 ]]; then
 	QUIT_FLAG=1
 	echo "Pulling $PULL_STRING"
-	curl --silent --no-buffer --max-time 600 --retry 3 --show-error --connect-timeout 5 -O "$PULL_STRING" >/dev/null 2>/dev/null &
+	curl -L --silent --no-buffer --max-time 600 --retry 3 --show-error --connect-timeout 5 -O "$PULL_STRING" >/dev/null 2>/dev/null &
 fi
 
 if [[ $QUIT_FLAG -eq 1 ]]; then
